@@ -57,25 +57,24 @@ export default {
     limit: { minValue: minValue(100) },
   },
   methods: {
-   async submitHandler() {
+    async submitHandler() {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
       }
-      try{
-        const category = await this.$store.dispatch('createCategory', {
-        title: this.title,
-        limit: this.limit
-      })
-      this.title = ''
-      this.limit = 100
-      this.$v.$reset()
-      this.$message('Категория было создана')
-      this.$emit('created', category)
-      
-
-      }catch(e){''}
-     
+      try {
+        const category = await this.$store.dispatch("createCategory", {
+          title: this.title,
+          limit: this.limit,
+        });
+        this.title = "";
+        this.limit = 100;
+        this.$v.$reset();
+        this.$message("Категория было создана");
+        this.$emit("created", category);
+      } catch (e) {
+        ("");
+      }
     },
   },
   mounted() {
