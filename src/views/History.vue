@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>История записей</h3>
+      <h3>{{'History_records' | localize}}</h3>
     </div>
 
     <div class="history-chart">
@@ -19,8 +19,8 @@
         v-model="page"
         :page-count="pageCount"
         :click-handler="pageChangeHandler"
-        :prev-text="'Назад'"
-        :next-text="'Вперед'"
+        :prev-text="prev_next"
+        :next-text="next_next"
         :container-class="'pagination'"
         :page-class="'waves-effect'">
       </Paginate>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>Планирование</h3>
+      <h3>{{'Planning_h' | localize}}</h3>
       <h4>{{ info.bill | currency("KZT") }}</h4>
     </div>
     <Loader v-if="loading" />
@@ -13,7 +13,7 @@
       <div v-for="cat in categories" :key="cat.id">
         <p>
           <strong>{{ cat.title }}:</strong>
-          {{ cat.spend | currency}} из {{ cat.limit | currency}}
+          {{ cat.spend | currency}} {{'From' | localize}} {{ cat.limit | currency}}
         </p>
         
         <div class="progress" v-tooltip="cat.tooltip">

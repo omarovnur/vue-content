@@ -1,4 +1,4 @@
-
+import localizeFilter from '@/filters/localize.filter'
 import _ from 'lodash'
 export default{
     data(){
@@ -8,6 +8,8 @@ export default{
             pageCount: 0,
             allItems: [],
             items: [],
+            prev_next: localizeFilter('Pag_back'),
+            next_next: localizeFilter('Pag_forward')
 
         }
     },

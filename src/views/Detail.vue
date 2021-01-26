@@ -47,7 +47,7 @@ export default {
 
     this.loading = false
     
-    console.log(category)
+    
 
   }
   
